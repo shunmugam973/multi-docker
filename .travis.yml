@@ -9,17 +9,17 @@ script:
       - docker run demo/multiclient npm test -- --coverage
 
 after_success:
-      - docker build -t demo/multi-client ./client
-      - docker build -t demo/multi-nginx ./nginx
-      - docker build -t demo/multi-server ./server
-      - docker build -t demo/multi-worker ./worker
+      - docker build -t shunmugam379/multi-client ./client
+      - docker build -t shunmugam379/multi-nginx ./nginx
+      - docker build -t shunmugam379/multi-server ./server
+      - docker build -t shunmugam379/multi-worker ./worker
 
 # log in to the Docker Cli
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
 # Push the build images to docker hub
-      - docker push demo/multi-client
-      - docker push demo/multi-nginx
-      - docker push demo/multi-server
-      - docker push demo/multi-worker
+      - docker push shunmugam379/multi-client
+      - docker push shunmugam379/multi-nginx
+      - docker push shunmugam379/multi-server
+      - docker push shunmugam379/multi-worker
 
