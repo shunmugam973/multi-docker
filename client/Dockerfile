@@ -7,7 +7,7 @@ COPY . .
 
 RUN npm run build
 
-FROM NGINX
+FROM nginx
 EXPOSE 3000
 COPY ./nginx/default.conf /etc/nginx/conf.d/defult.conf
 COPY --from=builder /app/build /usr/nginx/share/html
