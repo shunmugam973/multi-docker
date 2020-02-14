@@ -17,7 +17,7 @@ after_success:
 # log in to the Docker Cli
       - echo "DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-# Push the images to docker hub
+# Push the build images to docker hub
       - docker push demo/multi-client
       - docker push demo/multi-nginx
       - docker push demo/multi-server
